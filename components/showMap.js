@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { View, Text, StyleSheet, Platform, TouchableOpacity} from 'react-native';
 import MapboxGL from '@react-native-mapbox-gl/maps';
-
+import exampleIcon from '../hiker.png';
 
 
 
@@ -135,11 +135,18 @@ export default class showMap extends Component {
 				  <MapboxGL.UserLocation
 				  showsUserHeadingIndicator={true}
 				//   minDisplacement={1}
-				  renderMode={'native'}
 				  visible={true}
+				  renderMode={'custom'}
 				  onUpdate={this.onUserLocationUpdate}
 				  >
-						
+					  <MapboxGL.SymbolLayer
+					    id={'custom-user-symbol'}
+					    style={{
+					      iconImage: exampleIcon,
+					      iconRotationAlignment: 'map',
+					      iconAllowOverlap: true,
+					    }}
+					  />	
 				</MapboxGL.UserLocation>
 				<MapboxGL.ShapeSource id='line1' shape={this.state.route}>
 					<MapboxGL.LineLayer id='linelayer1' style={{lineColor:'red'}} />
