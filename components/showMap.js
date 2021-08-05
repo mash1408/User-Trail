@@ -10,6 +10,8 @@ MapboxGL.setAccessToken(
   'pk.eyJ1IjoibWFzaDE0MDgiLCJhIjoiY2tybWlxcmgxMWthYjJ3dGoxMXRlZ3YyZSJ9.Ler-SblIXMyAWcVNeyyAcg',
 );
 const is_android=Platform.OS === "android";
+//*********************************************************USER INITIAL COORDINATES****************************************************************
+//NAVIGATOR.GEOLOCATOR WASNT WORKING , SO I HARDCODED THE INITIAL COORDS
 let coords= [
 	[
 		73.9931433,
